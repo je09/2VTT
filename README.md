@@ -1,6 +1,8 @@
 # 2VTT
-It's a simple subtitle converter based on PyQt5 and Python 3.6
-It converts .srt subs to .vtt format.
+It's a simple subtitle converter based on PyQt5 and Python 3.6. Thats why you need to install PyQt5 first.
+You can install it with "pip install PyQt5"
+
+It converts .srt (more formats soon) subs to .vtt format.
 
 To use this app launch "2VTT.py" with "python .../2VTT.py" 
 (You can also build a standalone app with py2app or py2exe.It's simplier to use, but file'll be large)
