@@ -62,7 +62,7 @@ class srt_parser:
         return self._sub_metadata
 
     def parse_lines(self, line_text):
-        print(line_text)
+        # print(line_text)
         self._sub_metadata['counter'].append(int(line_text[0].strip().strip('\ufeff')))
         self._sub_metadata['time'].append(self.parse_time(line_text[1].strip().split(' --> ', 1)))
         self._sub_metadata['text'].append(line_text[2:len(line_text)])
