@@ -2,7 +2,7 @@
 This module converts subtitles to .vtt format
 For now it converts only .srt subs
 
-This shitty code writen by je09
+This shitty code writed by je09
 Github repository: https://github.com/je09/2VTT
 
 2018

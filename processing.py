@@ -1,18 +1,23 @@
 import os, to_vtt
+from PyQt5.QtWidgets import QMessageBox
 #import logging
 
 class file_worker:
-    _srt = to_vtt.srt_parser()
+    _srt = to_vtt.srt_parser
     _vtt = to_vtt.vtt_builder
 
 
     def open_file(self, path, name):
         folder = os.path.dirname(path)
         text = self.decoder(path)
-        dictionary = self._srt.parse_text(text)
-        vtt_result = self._vtt(dictionary).vtt_lines
 
-        self.write_file(vtt_result, name, folder)
+        try:
+            dictionary = self._srt().parse_text(text)
+            vtt_result = self._vtt(dictionary).vtt_lines
+
+            self.write_file(vtt_result, name, folder)
+        except ValueError:
+            self.syntax_error(path)
 
     def write_file(self, text, name, folder):
         path = '{0}/{1}.vtt'.format(folder, name)
@@ -41,3 +46,9 @@ class file_worker:
             return text
         else:
             return 'Unknown encoding'
+
+    # Show syntax error message
+    def syntax_error(self, path):
+        message = QMessageBox()
+        message.setText('Syntax error in {0}'.format(path))
+        message.exec()
