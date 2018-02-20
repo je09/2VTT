@@ -14,8 +14,8 @@ class srt_parser:
     Parsing of .srt content
     Returns dictionary with structured sub's information
     """
-
-    _sub_metadata = {'counter': [], 'time': [], 'text': []}
+    def __init__(self):
+        self._sub_metadata = {'counter': [], 'time': [], 'text': []}
 
     def parse_time(self, time):
         """
