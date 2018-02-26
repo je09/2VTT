@@ -20,4 +20,14 @@ After adding everything you wanted. Just click "Convert it!".
 Converted files will appers in the same folder with same name, but in ".vtt" format.
 ![alt text](https://raw.githubusercontent.com/je09/2VTT/master/screenshots/Screen%20Shot%202018-02-19%20at%2011.15.54.png)
 
-*Settings section is usless for now*
+For removing original files after conversation, choice "Delete original file after conversation" option in settings.
+![alt text](https://raw.githubusercontent.com/je09/2VTT/master/screenshots/Screen%20Shot%202018-02-26%20at%2010.17.23.png)
+
+# Changelog
+**0.9.4** - (0.9.4 is because of reasons) minor bug fixes, delete original after conversation (26.02.18)
+
+**0.9.2** - linebreak crush fix, append bug fix (20.02.18)
+
+**0.9.1** - minor coding style improvements (19.02.18)
+
+**0.9** - first build (16.02.18)
