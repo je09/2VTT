@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/Users/Harder/Documents/Code/Py/Projects/2VTT lite/UI_Designer files/settings.ui'
+# Form implementation generated from reading ui file '/Users/je09/Documents/Code/Py/Projects/2VTT lite/UI_Designer files/settings.ui'
 #
 # Created by: PyQt5 UI code generator 5.9.2
 #
@@ -16,9 +16,9 @@ class Ui_tabWidget(object):
         tabWidget.setMaximumSize(QtCore.QSize(404, 161))
         self.tab = QtWidgets.QWidget()
         self.tab.setObjectName("tab")
-        self.checkLogging = QtWidgets.QCheckBox(self.tab)
-        self.checkLogging.setGeometry(QtCore.QRect(10, 0, 381, 20))
-        self.checkLogging.setObjectName("checkLogging")
+        self.checkDelete = QtWidgets.QCheckBox(self.tab)
+        self.checkDelete.setGeometry(QtCore.QRect(10, 0, 381, 20))
+        self.checkDelete.setObjectName("checkDelete")
         self.saveButton = QtWidgets.QPushButton(self.tab)
         self.saveButton.setGeometry(QtCore.QRect(140, 105, 113, 32))
         self.saveButton.setObjectName("saveButton")
@@ -31,7 +31,7 @@ class Ui_tabWidget(object):
     def retranslateUi(self, tabWidget):
         _translate = QtCore.QCoreApplication.translate
         tabWidget.setWindowTitle(_translate("tabWidget", "Prefences"))
-        self.checkLogging.setText(_translate("tabWidget", "Logging in journal"))
+        self.checkDelete.setText(_translate("tabWidget", "Delete original file after conversation"))
         self.saveButton.setText(_translate("tabWidget", "Save"))
         tabWidget.setTabText(tabWidget.indexOf(self.tab), _translate("tabWidget", "Programm settings"))
 

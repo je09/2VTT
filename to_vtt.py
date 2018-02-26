@@ -7,7 +7,7 @@ Github repository: https://github.com/je09/2VTT
 
 2018
 """
-import logging
+#import logging
 
 class srt_parser:
     """

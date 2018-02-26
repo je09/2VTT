@@ -32,7 +32,7 @@
    <attribute name="title">
     <string>Programm settings</string>
    </attribute>
-   <widget class="QCheckBox" name="checkLogging">
+   <widget class="QCheckBox" name="checkDelete">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -42,7 +42,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Logging in journal</string>
+     <string>Delete original file after conversation</string>
     </property>
    </widget>
    <widget class="QPushButton" name="saveButton">

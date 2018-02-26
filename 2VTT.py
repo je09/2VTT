@@ -1,5 +1,6 @@
 import sys, pickle
-from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QTabWidget, QWidget, QListWidgetItem
+#import logging
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QTabWidget, QWidget, QListWidgetItem
 from ui_py.ui_mainWindow import Ui_MainWindow
 from ui_py.ui_settings import Ui_tabWidget
 from ui_py.ui_about import Ui_Form
@@ -61,7 +62,6 @@ class file_processor:
     _supported_formats = ['srt']
     # class from processing.py
     filew = file_worker()
-    
     def add_path(self, path):
         self.path_list.append(path)
         file = path.split('/').pop()
@@ -72,9 +72,10 @@ class file_processor:
         MainWindow.ui.fileList.addItem(item)
 
     def send_to_process(self, path):
+        prefs = SettingsWindow.prefs
         for path in self.path_list:
             name = path.split('/').pop().split('.srt')[0]
-            self.filew.open_file(path, name)
+            self.filew.open_file(path, name, prefs)
 
     # Check is file format valid
     def check_everything(self, path):
@@ -86,7 +87,7 @@ class file_processor:
 
 class SettingsWindow(QTabWidget, Ui_MainWindow):
     # List with settings from file in root
-    prefs = {'logging': None}
+    prefs = {'delete': None}
 
     def __init__(self, parent=None):
         self.TabWidget = QTabWidget()
@@ -99,8 +100,8 @@ class SettingsWindow(QTabWidget, Ui_MainWindow):
 
 
     def save_prefs(self):
-        logging_state = self.ui_prefs.checkLogging.isChecked()
-        self.prefences_dictionary = {'logging': logging_state}
+        logging_state = self.ui_prefs.checkDelete.isChecked()
+        self.prefences_dictionary = {'delete': logging_state}
         self.write_prefs(self.prefences_dictionary)
         self.read_prefs()
 
@@ -110,21 +111,21 @@ class SettingsWindow(QTabWidget, Ui_MainWindow):
 
     def set_saved_prefences(self):
         self.read_prefs()
-        self.ui_prefs.checkLogging.setChecked(self.prefs['logging'])
+        self.ui_prefs.checkDelete.setChecked(self.prefs['delete'])
 
     # Get prefs from file in the root dir (not user's root, app root)
     def read_prefs(self):
         try:
             with open('prefences.dat', 'rb') as file:
-                logging = pickle.load(file)['logging']
+                delete = pickle.load(file)['delete']
 
         except FileNotFoundError:
             with open('prefences.dat', 'wb') as file:
-                default = {'logging': True}
+                default = {'delete': False}
                 pickle.dump(default, file)
-                logging = True
+                delete = False
 
-        self.prefs['logging'] = logging
+        self.prefs['delete'] = delete
 
 
 class aboutWindow(QWidget, Ui_MainWindow):
