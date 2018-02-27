@@ -95,7 +95,7 @@ class vtt_builder:
         Output: string with time formated for vtt
         Example: 00:00:26.720
         """
-        return '{:02d}:{:02d}:{:02d}.{:02d}'.format(time[0], time[1],
+        return '{:02d}:{:02d}:{:02d}.{:03d}'.format(time[0], time[1],
                                                     time[2], time[3])
 
     def _build_lines(self):
@@ -116,7 +116,7 @@ class vtt_builder:
                 text += j + '\n'
 
             # Building line itself and adding it into the list
-            lines.append('{0}\n{1}\n{2}\n'.format(self._metadata['counter'][i], time, text))
+            lines.append('{0}\n{1}\n'.format(time, text))
 
         self._build_vtt(lines)
 
