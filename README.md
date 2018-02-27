@@ -24,6 +24,8 @@ For removing original files after conversation, choice "Delete original file aft
 ![alt text](https://raw.githubusercontent.com/je09/2VTT/master/screenshots/Screen%20Shot%202018-02-26%20at%2010.17.23.png)
 
 # Changelog
+**0.9.5** - I don't wanna talk about it. But now everything works fine,
+
 **0.9.4** - (0.9.4 is because of reasons) minor bug fixes, delete original after conversation (26.02.18)
 
 **0.9.2** - linebreak crush fix, append bug fix (20.02.18)
