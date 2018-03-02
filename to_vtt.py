@@ -57,7 +57,8 @@ class srt_parser:
                 single_replica = []
 
         for replica_groups in full_replicas:
-            self.parse_lines(replica_groups)
+            if replica_groups:
+                self.parse_lines(replica_groups)
 
         return self._sub_metadata
 
